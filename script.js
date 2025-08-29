@@ -1,15 +1,26 @@
-function checkAllocations() {
+function showPopup() {
   const username = document.getElementById("username").value;
-  const popup = document.getElementById("popup");
-
-  if (username) {
-    popup.innerText = `Checking allocations for ${username}...`;
-    popup.style.display = "block";
-    setTimeout(() => {
-      popup.innerText = `Allocations checked for ${username}`;
-    }, 2000);
-  } else {
-    popup.innerText = "Please enter a username!";
-    popup.style.display = "block";
+  if (username.trim() === "") {
+    alert("Please enter a username or crypto address");
+    return;
   }
+  document.getElementById("popup").style.display = "block";
 }
+
+function closePopup() {
+  document.getElementById("popup").style.display = "none";
+  const video = document.getElementById("prankVideo");
+  video.pause(); // stop video when closing popup
+  video.currentTime = 0;
+}
+
+// Particles background setup
+particlesJS("particles-js", {
+  particles: {
+    number: { value: 80 },
+    size: { value: 3 },
+    move: { speed: 1 },
+    line_linked: { enable: true },
+    color: { value: "#ffffff" }
+  }
+});
