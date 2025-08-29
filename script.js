@@ -1,54 +1,54 @@
-// Particle Background
-const canvas = document.getElementById("particles");
+const canvas = document.getElementById("butterflyCanvas");
 const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-const particles = [];
-const colors = ["#00e5ff", "#80d8ff", "#18ffff"];
+const butterflies = [];
+const butterflyImg = new Image();
+butterflyImg.src = "assets/butterfly.png"; // Your image in assets folder
 
-function createParticles() {
-  for (let i = 0; i < 50; i++) {
-    particles.push({
+// Create butterflies
+function createButterflies() {
+  for (let i = 0; i < 15; i++) {
+    butterflies.push({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
-      radius: Math.random() * 3 + 1,
-      color: colors[Math.floor(Math.random() * colors.length)],
-      speedX: Math.random() * 1 - 0.5,
-      speedY: Math.random() * 1 - 0.5,
+      speedX: (Math.random() - 0.5) * 2,
+      speedY: (Math.random() - 0.5) * 2,
+      size: 40 + Math.random() * 20,
     });
   }
 }
 
-function drawParticles() {
+function drawButterflies() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  particles.forEach((p) => {
-    ctx.beginPath();
-    ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-    ctx.fillStyle = p.color;
-    ctx.fill();
+  butterflies.forEach((b) => {
+    ctx.drawImage(butterflyImg, b.x, b.y, b.size, b.size);
 
-    p.x += p.speedX;
-    p.y += p.speedY;
+    b.x += b.speedX;
+    b.y += b.speedY;
 
-    if (p.x < 0 || p.x > canvas.width) p.speedX *= -1;
-    if (p.y < 0 || p.y > canvas.height) p.speedY *= -1;
+    if (b.x < 0 || b.x > canvas.width) b.speedX *= -1;
+    if (b.y < 0 || b.y > canvas.height) b.speedY *= -1;
   });
-  requestAnimationFrame(drawParticles);
+  requestAnimationFrame(drawButterflies);
 }
 
-createParticles();
-drawParticles();
-
-// Prank Video Popup
-const searchBtn = document.getElementById("searchBtn");
+// Video popup
+const checkoutBtn = document.getElementById("checkoutBtn");
 const videoPopup = document.getElementById("videoPopup");
-const closeBtn = document.getElementById("closeBtn");
+const prankVideo = document.getElementById("prankVideo");
 
-searchBtn.addEventListener("click", () => {
-  videoPopup.style.display = "block";
+checkoutBtn.addEventListener("click", () => {
+  videoPopup.style.display = "flex";
+  prankVideo.play();
 });
 
-closeBtn.addEventListener("click", () => {
+videoPopup.addEventListener("click", () => {
   videoPopup.style.display = "none";
+  prankVideo.pause();
+  prankVideo.currentTime = 0;
 });
+
+createButterflies();
+drawButterflies();
