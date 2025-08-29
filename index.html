@@ -1,19 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Allocation Checker</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="container">
-      <h1>Allocation Checker</h1>
-      <p>Developed by YourName</p>
-      <input id="username" type="text" placeholder="Enter Username" />
-      <button onclick="checkAllocations()">Check Allocations</button>
-      <div id="popup" class="popup">Checking allocations...</div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hana Username Checker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Particle Background -->
+  <div id="particles-js"></div>
+
+  <div class="container">
+    <img src="hana-logo.png" alt="Hana Logo" class="logo">
+    <h1>Developed by YourName</h1>
+
+    <div class="search-box">
+      <input type="text" id="username" placeholder="Enter username or crypto address">
+      <button onclick="showPopup()">Check</button>
     </div>
-    <script src="script.js"></script>
-  </body>
+  </div>
+
+  <!-- Popup -->
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <span class="close" onclick="closePopup()">&times;</span>
+      <h2>Gotcha! 😂</h2>
+      <!-- MP4 Video -->
+      <video id="prankVideo" controls autoplay>
+        <source src="funny-video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+
+  <script src="particles.js"></script>
+  <script src="script.js"></script>
+</body>
 </html>
