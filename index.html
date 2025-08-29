@@ -3,37 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hana Username Checker</title>
+  <title>Prank Search</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Particle Background -->
-  <div id="particles-js"></div>
+  <canvas id="particles"></canvas>
 
-  <div class="container">
-    <img src="hana-logo.png" alt="Hana Logo" class="logo">
-    <h1>Developed by YourName</h1>
-
-    <div class="search-box">
-      <input type="text" id="username" placeholder="Enter username or crypto address">
-      <button onclick="showPopup()">Check</button>
-    </div>
+  <div class="content">
+    <img src="logo.png" class="logo" alt="Logo">
+    <h1>Prank Search by YourName</h1>
+    <input type="text" id="username" placeholder="Enter username...">
+    <button id="searchBtn">Search</button>
   </div>
 
-  <!-- Popup -->
-  <div id="popup" class="popup">
-    <div class="popup-content">
-      <span class="close" onclick="closePopup()">&times;</span>
-      <h2>Gotcha! 😂</h2>
-      <!-- MP4 Video -->
-      <video id="prankVideo" controls autoplay>
-        <source src="funny-video.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
+  <div id="videoPopup" class="popup">
+    <video id="prankVideo" controls autoplay>
+      <source src="prank.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <button id="closeBtn">Close</button>
   </div>
 
-  <script src="particles.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
