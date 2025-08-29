@@ -1,37 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Butterfly Background</title>
-  <link rel="stylesheet" href="style.css" />
-  <!-- Three.js (r152 is stable & light enough) -->
-  <script src="https://unpkg.com/three@0.152.2/build/three.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Butterfly Checkout Prank</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Header bar on top (you can customize or remove) -->
-  <header class="site-header">
-    <div class="brand">
-      <img src="assets/logo.png" alt="" class="logo" onerror="this.style.display='none'"/>
-      <span class="title">Hana • Butterfly Background</span>
-      <span class="byline">by YourName</span>
-    </div>
-    <nav class="nav">
-      <a href="#">Home</a>
-      <a href="#">Docs</a>
-      <a href="#">Contact</a>
-    </nav>
+  <header>
+    <h1>Butterfly Prank</h1>
   </header>
 
-  <!-- Canvas sits behind everything -->
-  <div id="butterfly-bg"></div>
+  <canvas id="butterflyCanvas"></canvas>
 
-  <!-- Your page content (example) -->
-  <main class="hero">
-    <h1>Welcome</h1>
-    <p>This background is a custom Three.js swarm of butterflies 🦋</p>
-  </main>
+  <div class="checkout">
+    <input type="text" id="username" placeholder="Enter Username or Crypto Address">
+    <button id="checkoutBtn">Checkout</button>
+  </div>
 
-  <script src="butterflies.js"></script>
+  <!-- Popup Video -->
+  <div id="videoPopup" class="popup">
+    <video id="prankVideo" controls>
+      <source src="assets/prank.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
