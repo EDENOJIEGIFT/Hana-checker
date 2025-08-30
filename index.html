@@ -7,31 +7,28 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Header Section -->
+  <header class="header">
+    <h1>Allocation Checker</h1>
+  </header>
 
   <!-- Background Video -->
-  <video autoplay muted loop id="bg-video">
-    <!-- Put your WebM background video inside the assets folder -->
+  <video autoplay muted loop playsinline class="bg-video">
     <source src="assets/background.webm" type="video/webm">
     Your browser does not support the video tag.
   </video>
 
-  <!-- Header Section -->
-  <header>
-    <h1>Allocation Checker</h1>
-  </header>
-
-  <!-- Main Content Section -->
-  <main>
-    <input type="text" id="allocation-input" placeholder="Enter your allocation code">
+  <!-- Main Content -->
+  <div class="content">
+    <input id="twitter-input" type="text" placeholder="Enter your Twitter handle">
     <button id="check-btn">Check Allocation</button>
-  </main>
+    <p id="error-msg" class="error hidden">Please enter your Twitter handle!</p>
+  </div>
 
-  <!-- Popup Video Modal -->
-  <div id="video-popup" class="hidden">
+  <!-- Popup Video -->
+  <div id="video-popup" class="popup hidden">
     <video id="popup-video" controls>
-      <!-- This is the video that plays when button is clicked -->
-      <source src="assets/popup.mp4" type="video/mp4">
-      Your browser does not support the video tag.
+      <source src="assets/allocation-video.mp4" type="video/mp4">
     </video>
     <button id="close-btn">Close</button>
   </div>
