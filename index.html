@@ -3,26 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Butterfly Checkout Prank</title>
+  <title>Allocation Checker</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+  <!-- Background Video -->
+  <video autoplay muted loop id="bg-video">
+    <!-- Put your WebM background video inside the assets folder -->
+    <source src="assets/background.webm" type="video/webm">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Header Section -->
   <header>
-    <h1>Butterfly Prank</h1>
+    <h1>Allocation Checker</h1>
   </header>
 
-  <canvas id="butterflyCanvas"></canvas>
+  <!-- Main Content Section -->
+  <main>
+    <input type="text" id="allocation-input" placeholder="Enter your allocation code">
+    <button id="check-btn">Check Allocation</button>
+  </main>
 
-  <div class="checkout">
-    <input type="text" id="username" placeholder="Enter Username or Crypto Address">
-    <button id="checkoutBtn">Checkout</button>
-  </div>
-
-  <!-- Popup Video -->
-  <div id="videoPopup" class="popup">
-    <video id="prankVideo" controls>
-      <source src="assets/prank.mp4" type="video/mp4">
+  <!-- Popup Video Modal -->
+  <div id="video-popup" class="hidden">
+    <video id="popup-video" controls>
+      <!-- This is the video that plays when button is clicked -->
+      <source src="assets/popup.mp4" type="video/mp4">
+      Your browser does not support the video tag.
     </video>
+    <button id="close-btn">Close</button>
   </div>
 
   <script src="script.js"></script>
