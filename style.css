@@ -1,13 +1,5 @@
-/* Reset */
-body, html {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  height: 100%;
-}
-
-/* Background video */
-.bg-video {
+/* Fullscreen background video */
+.background-video {
   position: fixed;
   top: 0;
   left: 0;
@@ -17,84 +9,70 @@ body, html {
   z-index: -1;
 }
 
-/* Header */
+/* Header Bar */
 .header {
-  background: rgba(0, 0, 0, 0.6);
-  color: white;
-  padding: 15px;
+  position: fixed;
+  top: 0;
+  width: 100%;
   text-align: center;
-  position: relative;
-  z-index: 10;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px;
+  font-size: 20px;
 }
 
-/* Content Centering */
-.content {
+/* Center content (Web4 + Allocation) */
+.center-content {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  height: calc(100vh - 70px); /* full height minus header height */
-  text-align: center;
-  position: relative;
-  z-index: 5;
-}
-
-/* Input & Button */
-input {
-  padding: 10px;
-  width: 250px;
-  margin: 10px;
-  border: none;
-  border-radius: 5px;
-}
-
-button {
-  padding: 10px 20px;
-  border: none;
-  background: #00c3ff;
+  justify-content: center;
+  height: 100vh;
+  gap: 30px;
   color: white;
+  text-align: center;
+  z-index: 1;
+  position: relative;
+}
+
+.web4-section .text-title-l {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.web4-section .text-secondary {
+  font-size: 14px;
+  max-width: 400px;
+  margin: auto;
+}
+
+/* Allocation checker input + button */
+.allocation-checker input {
+  padding: 10px;
+  border: none;
   border-radius: 5px;
+}
+
+.allocation-checker button {
+  padding: 10px 20px;
+  margin-left: 10px;
   cursor: pointer;
 }
 
-.error {
-  color: red;
-  font-size: 14px;
-}
-
-.hidden {
-  display: none;
-}
-
-/* Popup */
+/* Popup Styling */
 .popup {
+  display: none;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: white;
+  background: rgba(0, 0, 0, 0.8);
   padding: 20px;
   border-radius: 10px;
-  z-index: 999;
   text-align: center;
 }
+
 .popup video {
   width: 400px;
-  max-width: 90%;
-}
-/* Intro Text Section */
-.intro-text {
-  margin-bottom: 20px;
-  color: white;
-  text-align: center;
-}
-
-.text-title-l {
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.text-secondary {
-  color: #ccc;
-  font-size: 13px;
+  border-radius: 10px;
 }
