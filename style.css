@@ -82,3 +82,19 @@ button {
   width: 400px;
   max-width: 90%;
 }
+/* Intro Text Section */
+.intro-text {
+  margin-bottom: 20px;
+  color: white;
+  text-align: center;
+}
+
+.text-title-l {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.text-secondary {
+  color: #ccc;
+  font-size: 13px;
+}
