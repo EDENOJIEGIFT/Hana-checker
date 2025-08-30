@@ -1,20 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hana Allocation Checker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
 <body>
-  <!-- Background video -->
-  <video autoplay muted loop class="bg-video">
-    <source src="assets/background.webm" type="video/webm" />
+  <!-- Background Video -->
+  <video autoplay muted loop playsinline class="background-video">
+    <source src="assets/background.webm" type="video/webm">
   </video>
 
   <!-- Header -->
-  <div class="header">
-    <h1>Hana Network Allocation Checker</h1>
-  </div>
+  <header class="header">
+    <h1>Hana Network</h1>
+  </header>
 
-  <!-- Centered Content -->
-  <div class="content">
-    <!-- Intro Section Above Allocation -->
-    <div class="flex flex-col gap-5 intro-text">
-      <div class="text-title-l text-foreground">Web4 Hypercasual Finance</div>
-      <div class="font-size-[13px] text-secondary">
+  <!-- Center Content -->
+  <div class="center-content">
+    <!-- Web4 Info Section -->
+    <div class="web4-section">
+      <div class="text-title-l">Web4 Hypercasual Finance</div>
+      <div class="text-secondary">
         From Web3 to Web4.<br>
         Hana Network is Web4 Hypercasual Finance driven by existing social network effects.<br>
         In the coming Web4 era, we will replace CEX as the gateway.
@@ -22,18 +30,20 @@
     </div>
 
     <!-- Allocation Checker Section -->
-    <div class="allocation">
-      <input type="text" id="twitterHandle" placeholder="Enter your @TwitterHandle" />
+    <div class="allocation-checker">
+      <input type="text" id="twitterHandle" placeholder="Enter your Twitter handle">
       <button onclick="checkAllocation()">Check Allocation</button>
-      <p id="errorMsg" class="error hidden">Please enter a valid Twitter handle.</p>
     </div>
   </div>
 
   <!-- Popup -->
-  <div id="popup" class="popup hidden">
-    <video autoplay controls>
-      <source src="assets/video.mp4" type="video/mp4">
+  <div id="videoPopup" class="popup">
+    <video controls>
+      <source src="assets/popup.mp4" type="video/mp4">
     </video>
     <button onclick="closePopup()">Close</button>
   </div>
+
+  <script src="script.js"></script>
 </body>
+</html>
