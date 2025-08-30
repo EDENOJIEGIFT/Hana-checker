@@ -1,3 +1,11 @@
+/* Apply Poppins font globally */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  overflow: hidden;
+  text-align: center;
+}
 /* Fullscreen background video */
 .background-video {
   position: fixed;
